@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #00fff2;
+      --bg-dark: #0e0e0e;
+      --text-light: #e0e0e0;
+      --skill-bg: #222;
+      --bar-bg: #444;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .profile-img {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 20px auto;
+      box-shadow: 0 0 20px var(--primary);
+      border: 3px solid var(--primary);
+      transition: all 0.4s ease;
+    }
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px var(--primary);
+    }
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-top: 10px;
+      letter-spacing: 3px;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: #999;
+    }
+    p {
+      max-width: 600px;
+      margin: 15px auto;
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #bbb;
+    }
+    .social {
+      margin-top: 30px;
+    }
+    .social a {
+      margin: 0 10px;
+      color: var(--primary);
+      font-size: 1.8rem;
+      transition: 0.3s ease;
+    }
+    .social a:hover {
+      transform: scale(1.3);
+      color: #fff;
+    }
+    .skills {
+      margin-top: 80px;
+    }
+    .skills h3 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--primary);
+    }
+    .skill-bar {
+      background: var(--skill-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,255,242,0.3);
+      transition: transform 0.3s ease, opacity 0.8s ease;
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    .skill-bar.visible {
+      opacity: 1;
+      transform: translateX(0);
+      box-shadow: 0 0 20px var(--primary);
+    }
+    .skill-bar:hover {
+      transform: translateX(10px);
+      box-shadow: 0 0 20px var(--primary);
+    }
+    .skill-bar span {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+      align-items: center;
+    }
+    .skill-bar span .material-icons-outlined {
+      margin-left: 10px;
+      font-size: 1.6rem;
+      color: #00bcd4;
+    }
+    .bar {
+      height: 14px;
+      background: var(--bar-bg);
+      position: relative;
+      border-radius: 0 0 12px 12px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00fff2, #00bcd4);
+      width: 0;
+      border-radius: 0 0 12px 12px;
+      transition: width 2s ease;
+    }
+    .counter {
+      font-size: 0.9rem;
+      color: #aaa;
+      min-width: 40px;
+      text-align: right;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="profile-img">
+        <img src="https://assets.onecompiler.app/43ea4pg72/43frkn8nq/Picsart_25-03-13_18-18-11-773.jpg" alt="Profile Photo" />
+      </div>
+      <h1>ARIFUL RAHMAN SHAOUN</h1>
+      <br>
+      <h2>Professional | IT | Developer</h2>
+      <p>
+        Crafting modern, scalable and premium IT experiences. Passionate about performance, accessibility and seamless design.
+      </p>
+      <div class="social">
+        <a href="#"><span class="material-icons-outlined">facebook</span></a>
+        <a href="mailto:example@gmail.com"><span class="material-icons-outlined">mail</span></a>
+        <a href="#"><span class="material-icons-outlined">chat</span></a>
+        <a href="#"><span class="material-icons-outlined">alternate_email</span></a>
+      </div>
+    </header>
+    <section class="skills">
+      <h3>Skills Overview</h3>
+
+      <div class="skill-bar">
+        <span>HTML <span class="counter" data-target="95">0%</span><span class="material-icons-outlined">language</span></span>
+        <div class="bar"><div class="bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <span>CSS <span class="counter" data-target="90">0%</span><span class="material-icons-outlined">style</span></span>
+        <div class="bar"><div class="bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <span>JavaScript <span class="counter" data-target="85">0%</span><span class="material-icons-outlined">code</span></span>
+        <div class="bar"><div class="bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <span>React <span class="counter" data-target="80">0%</span><span class="material-icons-outlined">smart_toy</span></span>
+        <div class="bar"><div class="bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <span>Node.js <span class="counter" data-target="75">0%</span><span class="material-icons-outlined">cloud</span></span>
+        <div class="bar"><div class="bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <span>TypeScript <span class="counter" data-target="70">0%</span><span class="material-icons-outlined">integration_instructions</span></span>
+        <div class="bar"><div class="bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <span>GraphQL <span class="counter" data-target="65">0%</span><span class="material-icons-outlined">device_hub</span></span>
+        <div class="bar"><div class="bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <span>Docker <span class="counter" data-target="60">0%</span><span class="material-icons-outlined">layers</span></span>
+        <div class="bar"><div class="bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <span>Git & GitHub <span class="counter" data-target="85">0%</span><span class="material-icons-outlined">code_repository</span></span>
+        <div class="bar"><div class="bar-fill"></div></div>
+      </div>
+    </section>
+  </div>
+
+<script>
+  const skillBars = document.querySelectorAll('.skill-bar');
+  const counters = document.querySelectorAll('.counter');
+  const barFills = document.querySelectorAll('.bar-fill');
+
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+      rect.bottom >= 0
+    );
+  }
+
+  function animateSkillBar(skillBar, counter, barFill) {
+    if (skillBar.classList.contains('visible')) return; // একবারেই চলবে
+
+    skillBar.classList.add('visible');
+
+    // বার ফিল অ্যানিমেট করা
+    const targetPercent = +counter.getAttribute('data-target');
+    barFill.style.width = targetPercent + '%';
+
+    // কাউন্ট আপ এনিমেশন
+    let count = 0;
+    const speed = 20; // কত দ্রুত বাড়বে
+
+    function updateCounter() {
+      if (count < targetPercent) {
+        count++;
+        counter.textContent = count + '%';
+        setTimeout(updateCounter, speed);
+      } else {
+        counter.textContent = targetPercent + '%';
+      }
+    }
+    updateCounter();
+  }
+
+  function checkSkills() {
+    skillBars.forEach((skillBar, i) => {
+      if (isInViewport(skillBar)) {
+        animateSkillBar(skillBar, counters[i], barFills[i]);
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkSkills);
+  window.addEventListener('load', checkSkills);
+</script>
+<!-- নতুন About Me সেকশন -->
+<section class="about-me">
+  <h3>About Me</h3>
+  <div class="info-item">
+    <span class="material-icons-outlined">cake</span>
+    <div>
+      <h4>Age</h4>
+      <p id="age">Calculating...</p>
+    </div>
+  </div>
+  <div class="info-item">
+    <span class="material-icons-outlined">location_on</span>
+    <div>
+      <h4>Birthplace</h4>
+      <p>Mymensingh</p>
+    </div>
+  </div>
+  <div class="info-item">
+    <span class="material-icons-outlined">emoji_symbols</span>
+    <div>
+      <h4>Religion</h4>
+      <p>Islam</p>
+    </div>
+  </div>
+  <div class="info-item">
+    <span class="material-icons-outlined">school</span>
+    <div>
+      <h4>Education</h4>
+      <p>Currently studying Inter 2nd Year at Gauripur Govt. College</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* About Me সেকশনের জন্য CSS */
+  .about-me {
+    max-width: 700px;
+    margin: 80px auto 40px auto;
+    background: #111;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #00fff2aa;
+    color: #ddd;
+    animation: fadeInUp 1s ease forwards;
+  }
+  .about-me h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideFadeIn 0.7s ease forwards;
+  }
+  /* stagger animation delay */
+  .info-item:nth-child(1) { animation-delay: 0.3s; }
+  .info-item:nth-child(2) { animation-delay: 0.6s; }
+  .info-item:nth-child(3) { animation-delay: 0.9s; }
+  .info-item:nth-child(4) { animation-delay: 1.2s; }
+
+  .info-item span.material-icons-outlined {
+    font-size: 3rem;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+  .info-item h4 {
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary);
+  }
+  .info-item p {
+    font-size: 1.1rem;
+    color: #bbb;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  // লাইভ বয়স হিসাব করার স্ক্রিপ্ট
+  function calculateAge(birthDate) {
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  }
+
+  // পেইজ লোডে বয়স দেখাবে
+  window.addEventListener('load', () => {
+    const birthDate = new Date(2007, 5, 27); // মাস 0 থেকে শুরু, so June = 5
+    const ageEl = document.getElementById('age');
+    function updateAge() {
+      const age = calculateAge(birthDate);
+      ageEl.textContent = age + ' years old';
+    }
+    updateAge();
+    // দিনে একবার আপডেট করতে চাইলে:
+    setInterval(updateAge, 1000 * 60 * 60 * 24);
+  });
+</script>
+<!-- লট্টি প্লেয়ার স্ক্রিপ্ট -->
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+<!-- Motivational Section -->
+<section class="motivation">
+  <div class="motivation-container">
+    <dotlottie-player 
+      src="https://lottie.host/d51bb74c-e37e-49ea-8b4a-dd16b8337573/1l8JC565fw.lottie" 
+      background="transparent" 
+      speed="1" 
+      style="width: 200px; height: 200px;" 
+      loop autoplay>
+    </dotlottie-player>
+    <div class="message">
+      <p id="time"></p>
+      <h4>“Success doesn’t come from what you do occasionally, it comes from what you do consistently. Hard work beats talent when talent doesn’t work hard.”</h4>
+    </div>
+    <span class="material-icons-outlined clock-icon">schedule</span>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+  .motivation {
+    background: linear-gradient(135deg, #00fff2, #00bcd4);
+    padding: 40px 30px;
+    margin: 60px auto;
+    max-width: 850px;
+    border-radius: 25px;
+    box-shadow: 0 0 50px #00bcd4bb;
+    color: #0e0e0e;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    animation: fadeInMotivation 1.5s ease forwards;
+  }
+  .motivation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  dotlottie-player {
+    flex-shrink: 0;
+  }
+  .message {
+    max-width: 450px;
+  }
+  #time {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #004d4d;
+  }
+  .message h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #002222;
+    line-height: 1.4;
+  }
+  .clock-icon {
+    font-size: 3rem;
+    color: #004d4d;
+    animation: pulse 2s infinite ease-in-out;
+  }
+
+  /* এনিমেশন */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.7;
+    }
+  }
+  @keyframes fadeInMotivation {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  // লাইভ টাইম ফাংশন
+  function updateTime() {
+    const now = new Date();
+    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const timeString = now.toLocaleTimeString([], options);
+    document.getElementById('time').textContent = timeString;
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
