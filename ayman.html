@@ -1,503 +1,1266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>About Ayman Hasan Shaan - Founder of Swygen</title>
-  <meta name="description" content="Ayman Hasan Shaan, একজন প্রফেশনাল অ্যাপ, ওয়েবসাইট, এবং বট ডেভেলপার। তার দক্ষতা ও অভিজ্ঞতা সম্পর্কে জানুন।" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #00fff2;
-      --bg-dark: #0e0e0e;
-      --text-light: #e0e0e0;
-      --skill-bg: #222;
-      --bar-bg: #444;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      overflow-x: hidden;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    .profile-img {
-      width: 300px;
-      height: 300px;
-      border-radius: 20px;
-      overflow: hidden;
-      margin: 20px auto;
-      box-shadow: 0 0 20px var(--primary);
-      border: 3px solid var(--primary);
-      transition: all 0.4s ease;
-    }
-    .profile-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px var(--primary);
-    }
-    .profile-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    h1 {
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-top: 10px;
-      letter-spacing: 3px;
-    }
-    h2 {
-      font-weight: 400;
-      font-size: 1.5rem;
-      color: #999;
-    }
-    p {
-      max-width: 600px;
-      margin: 15px auto;
-      line-height: 1.6;
-      font-size: 1rem;
-      color: #bbb;
-    }
-    .social {
-      margin-top: 30px;
-    }
-    .social a {
-      margin: 0 10px;
-      color: var(--primary);
-      font-size: 1.8rem;
-      transition: 0.3s ease;
-    }
-    .social a:hover {
-      transform: scale(1.3);
-      color: #fff;
-    }
-    .skills {
-      margin-top: 80px;
-    }
-    .skills h3 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 40px;
-      color: var(--primary);
-    }
-    .skill-bar {
-      background: var(--skill-bg);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 30px;
-      box-shadow: 0 0 10px rgba(0,255,242,0.3);
-      transition: transform 0.3s ease, opacity 0.8s ease;
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    .skill-bar.visible {
-      opacity: 1;
-      transform: translateX(0);
-      box-shadow: 0 0 20px var(--primary);
-    }
-    .skill-bar:hover {
-      transform: translateX(10px);
-      box-shadow: 0 0 20px var(--primary);
-    }
-    .skill-bar span {
-      display: flex;
-      justify-content: space-between;
-      padding: 12px 20px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--primary);
-      align-items: center;
-    }
-    .skill-bar span .material-icons-outlined {
-      margin-left: 10px;
-      font-size: 1.6rem;
-      color: #00bcd4;
-    }
-    .bar {
-      height: 14px;
-      background: var(--bar-bg);
-      position: relative;
-      border-radius: 0 0 12px 12px;
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #00fff2, #00bcd4);
-      width: 0;
-      border-radius: 0 0 12px 12px;
-      transition: width 2s ease;
-    }
-    .counter {
-      font-size: 0.9rem;
-      color: #aaa;
-      min-width: 40px;
-      text-align: right;
-      margin-left: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Ayman Hasan Shaan, একজন প্রফেশনাল অ্যাপ, ওয়েবসাইট, এবং বট ডেভেলপার। তার দক্ষতা ও অভিজ্ঞতা সম্পর্কে জানুন।": Expert Web Developer and UI/UX Designer specializing in React, JavaScript, and modern, responsive design.">
+    <meta name="keywords" content="Ayman, portfolio, web developer, UI/UX designer, React, JavaScript, HTML, CSS, professional, responsive, modern">
+    <title>Ayman's Advanced Portfolio - Web Developer & Designer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <style>
+        /* CSS Variables - Color Palette, Spacing, Typography */
+        :root {
+            --color-navy-dark: #1e2a38;
+            --color-navy-light: #2c3e50;
+            --color-teal-accent: #00bcd4; /* Primary Accent */
+            --color-teal-light: #4dd0e1;
+            --color-neutral-warm: #f4f6f9; /* Background */
+            --color-white: #ffffff;
+            --color-text-dark: #333333;
+            --color-text-light: #f4f6f9;
+
+            --shadow-soft-lg: 0 10px 30px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
+            --shadow-neumorphic: 8px 8px 16px #c5c7cb, -8px -8px 16px #ffffff;
+            --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.1), 0 4px 16px 0 rgba(0, 0, 0, 0.05);
+            
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 48px;
+            --spacing-xxl: 72px;
+
+            --font-family-primary: 'Inter', 'SF Pro Display', sans-serif;
+            --border-radius: 12px;
+        }
+
+        /* Base Reset & Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* Prevents issues with fixed/sticky elements and no-zoom viewport */
+            -webkit-tap-highlight-color: transparent; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-primary);
+            color: var(--color-text-dark);
+            background-color: var(--color-neutral-warm);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 16px; /* Base for 8pt grid system (2x8=16) */
+            /* Prevents text-size-adjustment on zoom-disabled viewports */
+            -webkit-text-size-adjust: 100%; 
+            -ms-text-size-adjust: 100%;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--color-navy-dark);
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-teal-accent);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-navy-light);
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+            color: var(--color-navy-dark);
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--color-teal-accent);
+            margin: var(--spacing-sm) auto 0;
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            box-shadow: var(--shadow-soft-lg);
+            margin: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Neumorphism Buttons */
+        .btn-primary {
+            background-color: var(--color-teal-accent);
+            color: var(--color-white);
+            box-shadow: 4px 4px 10px rgba(0, 188, 212, 0.4), -4px -4px 10px var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: #0097a7;
+            transform: translateY(-2px);
+            box-shadow: 6px 6px 15px rgba(0, 188, 212, 0.5), -6px -6px 15px var(--color-white);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-neutral-warm);
+            color: var(--color-navy-dark);
+            border: 2px solid var(--color-teal-accent);
+            box-shadow: var(--shadow-neumorphic);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-teal-light);
+            color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft-lg);
+        }
+
+        /* Ripple Effect for Buttons */
+        .ripple-effect {
+            position: relative;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+        }
+        .ripple-effect:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+        .ripple-effect:active:after {
+            transform: scale(0, 0);
+            opacity: .2;
+            transition: 0s;
+        }
+
+        /* 2. Header & Navigation */
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--color-navy-dark);
+            box-shadow: var(--shadow-soft-lg);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .logo {
+            color: var(--color-teal-accent);
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: none; /* Hidden by default on mobile */
+        }
+
+        .nav-menu a {
+            color: var(--color-text-light);
+            padding: var(--spacing-md);
+            font-weight: 500;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--color-teal-light);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            left: var(--spacing-md);
+            right: var(--spacing-md);
+            bottom: var(--spacing-xs);
+            height: 2px;
+            background: var(--color-teal-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease-out;
+        }
+
+        .nav-menu a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Hamburger Menu Icon */
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            padding: var(--spacing-xs);
+            z-index: 1001;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: var(--spacing-xs) 0;
+            background-color: var(--color-teal-accent);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Mobile Menu Slide-in */
+        .nav-menu.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: var(--color-navy-dark);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease-in-out;
+            transform: translateX(0);
+            padding: var(--spacing-md) 0;
+        }
+        
+        .nav-menu:not(.active) {
+            transform: translateX(-100%);
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .nav-menu.active li {
+            text-align: center;
+            padding: var(--spacing-sm) 0;
+        }
+
+        /* Hamburger Animation */
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* 3. Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--color-neutral-warm) 0%, #ebedf0 100%);
+            padding-top: 60px; /* Offset for sticky header */
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            padding: var(--spacing-lg);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-soft-lg);
+            border: 6px solid var(--color-white);
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: var(--color-navy-dark);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #555;
+            margin-bottom: var(--spacing-xl);
+            min-height: 30px; /* Prevent layout shift */
+        }
+
+        /* Typewriter Effect CSS */
+        .typewriter h3 {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid var(--color-teal-accent); /* The caret */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .05em; /* Adjust as needed */
+            animation: 
+                typing 3.5s steps(30, end),
+                blink-caret .75s step-end infinite;
+            display: inline-block;
+        }
+
+        /* Typing animation */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--color-teal-accent); }
+        }
+        
+        .cta-buttons {
+            margin-top: var(--spacing-lg);
+        }
+
+        /* 4. About Me Section */
+        #about .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+            align-items: start;
+        }
+
+        .mission-card {
+            background-color: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft-lg);
+            transition: all 0.4s ease;
+            text-align: center;
+            border-left: 5px solid var(--color-teal-accent);
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .mission-card h3 {
+            color: var(--color-teal-accent);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* 5. Skills Section */
+        #skills {
+            background-color: var(--color-navy-light);
+            color: var(--color-text-light);
+        }
+
+        #skills .section-title {
+            color: var(--color-white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        /* Glassmorphism Panel */
+        .skill-panel {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-glass);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-panel:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .skill-item {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .skill-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--color-teal-accent);
+            border-radius: 50px;
+            width: 0;
+            transition: width 1.5s ease-out; /* Animated fill */
+        }
+        
+        /* 6. Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Default mobile single column */
+            gap: var(--spacing-xl);
+        }
+
+        .project-card {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft-lg);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px); /* Elevation effect */
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: var(--spacing-lg);
+        }
+
+        .project-info h4 {
+            font-size: 1.3rem;
+            color: var(--color-teal-accent);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-actions {
+            margin-top: var(--spacing-md);
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        /* Mobile Carousel (Placeholder for simplicity, full JS implementation complex for inline) */
+        .carousel-wrapper {
+            /* Ensures horizontal scrolling for multiple cards on mobile */
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: var(--spacing-md);
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+        .carousel-wrapper::-webkit-scrollbar {
+            display: none; /* Chrome, Safari */
+        }
+        .carousel-item {
+            display: inline-block;
+            width: 80%; /* Show part of the next card */
+            margin-right: var(--spacing-lg);
+            white-space: normal;
+        }
+        
+        /* 7. Experience / Education Timeline */
+        #timeline {
+            background-color: var(--color-neutral-warm);
+        }
+        
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--color-navy-dark);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            opacity: 0.2; /* Subtle line */
+            display: none; /* Hide on mobile */
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 100%; /* Full width on mobile */
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--color-teal-accent);
+            border: 4px solid var(--color-white);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            display: none; /* Hide on mobile */
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--color-white);
+            position: relative;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft-lg);
+            border-left: 5px solid var(--color-teal-accent);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-content h4 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-navy-dark);
+        }
+        
+        .timeline-date {
+            color: var(--color-teal-accent);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            display: block;
+        }
+
+        /* 8. Interests / Hobbies Section */
+        #interests {
+            background-color: var(--color-white);
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .interest-item {
+            padding: var(--spacing-xl);
+            background-color: var(--color-neutral-warm);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft-lg);
+            transition: all 0.3s ease;
+        }
+
+        .interest-item:hover {
+            transform: translateY(-5px);
+            background-color: var(--color-teal-accent);
+            color: var(--color-white);
+            box-shadow: 0 10px 20px rgba(0, 188, 212, 0.3);
+        }
+
+        .interest-icon {
+            font-size: 3rem;
+            color: var(--color-teal-accent);
+            margin-bottom: var(--spacing-md);
+            transition: color 0.3s ease;
+        }
+        
+        .interest-item:hover .interest-icon {
+            color: var(--color-white);
+        }
+        
+        .interest-name {
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .interest-item:hover .interest-name {
+            color: var(--color-white);
+        }
+
+        /* 9. Contact Section */
+        #contact {
+            background-color: var(--color-navy-dark);
+            color: var(--color-text-light);
+        }
+        
+        #contact .section-title {
+            color: var(--color-white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--color-white);
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--color-teal-accent);
+            box-shadow: 0 0 0 2px var(--color-teal-accent);
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: var(--spacing-xl);
+        }
+
+        .social-icon-link {
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--color-teal-light);
+            border-radius: 50%;
+            margin: var(--spacing-sm);
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-glass);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon-link:hover {
+            background-color: var(--color-teal-accent);
+            color: var(--color-white);
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+        }
+
+        /* 10. Footer */
+        #footer {
+            background-color: var(--color-navy-dark);
+            color: rgba(255, 255, 255, 0.6);
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .back-to-top {
+            position: absolute;
+            top: -25px; /* Position above footer */
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-teal-accent);
+            color: var(--color-white);
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-soft-lg);
+            transition: background-color 0.3s ease;
+        }
+        
+        .back-to-top:hover {
+            background-color: #0097a7;
+            transform: translateX(-50%) translateY(-2px);
+        }
+        
+        /* === DESKTOP / TABLET MEDIA QUERIES === */
+        @media (min-width: 768px) {
+            
+            body {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: var(--spacing-xxl) 0;
+            }
+            
+            /* Header */
+            .hamburger {
+                display: none;
+            }
+            
+            .nav-menu {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                transform: translateX(0);
+                width: auto;
+                background-color: transparent;
+                box-shadow: none;
+            }
+            
+            .nav-menu li {
+                padding: 0;
+                margin-left: var(--spacing-md);
+            }
+            
+            .nav-menu a {
+                padding: var(--spacing-md) var(--spacing-sm);
+            }
+
+            /* Hero */
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.5rem;
+            }
+
+            /* About */
+            #about .about-grid {
+                grid-template-columns: 2fr 1fr;
+                text-align: left;
+            }
+            
+            /* Projects */
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .carousel-wrapper {
+                /* On desktop, switch to a grid layout if needed, or remove horizontal scroll functionality */
+                overflow-x: hidden;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /* 4 items shown on desktop */
+                gap: var(--spacing-xl);
+                white-space: normal;
+                padding-bottom: 0;
+            }
+            
+            .carousel-item {
+                width: auto; /* Revert width for grid */
+                margin-right: 0;
+                white-space: normal;
+            }
+
+            /* Timeline */
+            .timeline-container::after {
+                display: block; /* Show vertical line */
+            }
+            
+            .timeline-item {
+                width: 50%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd) {
+                left: 0;
+                padding-right: 90px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 50%;
+                padding-left: 90px;
+            }
+
+            .timeline-item:nth-child(odd)::after {
+                right: -10px;
+                left: auto;
+                display: block;
+            }
+
+            .timeline-item:nth-child(even)::after {
+                left: -10px;
+                right: auto;
+                display: block;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content {
+                text-align: right;
+                border-left: none;
+                border-right: 5px solid var(--color-teal-accent);
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content {
+                text-align: left;
+            }
+            
+            /* Contact */
+            .contact-grid {
+                grid-template-columns: 3fr 2fr;
+            }
+            
+            .social-icons {
+                justify-content: flex-start;
+            }
+            
+            .contact-info {
+                text-align: left;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            /* Adjust project grid for larger screens */
+            .carousel-wrapper {
+                grid-template-columns: repeat(4, 1fr);
+                gap: var(--spacing-xl);
+            }
+        }
+        
+        /* Force single column for project grid on very small screens, which is already the default 1fr */
+        @media (max-width: 600px) {
+            .interests-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="profile-img">
-        <img src="https://i.postimg.cc/8cYZqwwx/20250709-114844.jpg" alt="Profile Photo" />
-      </div>
-      <h1>ARIFUL RAHMAN SHAOUN</h1>
-      <br>
-      <h2>Professional | IT | Developer</h2>
-      <p>
-        Crafting modern, scalable and premium IT experiences. Passionate about performance, accessibility and seamless design.
-      </p>
-      <div class="social">
-        <a href="#"><span class="material-icons-outlined">facebook</span></a>
-        <a href="mailto:example@gmail.com"><span class="material-icons-outlined">mail</span></a>
-        <a href="#"><span class="material-icons-outlined">chat</span></a>
-        <a href="#"><span class="material-icons-outlined">alternate_email</span></a>
-      </div>
+
+    <header id="header">
+        <div class="nav-container">
+            <a href="#hero" class="logo">AYMAN HASAN SHAAN</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="scroll-link">About</a></li>
+                <li><a href="#skills" class="scroll-link">Skills</a></li>
+                <li><a href="#projects" class="scroll-link">Projects</a></li>
+                <li><a href="#contact" class="scroll-link">Contact</a></li>
+                <li><a  href="index.html" class="scroll-link">Back To Home </a></li>
+                <li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </header>
-    <section class="skills">
-      <h3>Skills Overview</h3>
 
-      <div class="skill-bar">
-        <span>HTML <span class="counter" data-target="95">0%</span><span class="material-icons-outlined">language</span></span>
-        <div class="bar"><div class="bar-fill"></div></div>
-      </div>
-
-      <div class="skill-bar">
-        <span>CSS <span class="counter" data-target="90">0%</span><span class="material-icons-outlined">style</span></span>
-        <div class="bar"><div class="bar-fill"></div></div>
-      </div>
-
-      <div class="skill-bar">
-        <span>JavaScript <span class="counter" data-target="85">0%</span><span class="material-icons-outlined">code</span></span>
-        <div class="bar"><div class="bar-fill"></div></div>
-      </div>
-
-      <div class="skill-bar">
-        <span>React <span class="counter" data-target="80">0%</span><span class="material-icons-outlined">smart_toy</span></span>
-        <div class="bar"><div class="bar-fill"></div></div>
-      </div>
-
-      <div class="skill-bar">
-        <span>Node.js <span class="counter" data-target="75">0%</span><span class="material-icons-outlined">cloud</span></span>
-        <div class="bar"><div class="bar-fill"></div></div>
-      </div>
-
-      <div class="skill-bar">
-        <span>TypeScript <span class="counter" data-target="70">0%</span><span class="material-icons-outlined">integration_instructions</span></span>
-        <div class="bar"><div class="bar-fill"></div></div>
-      </div>
-
-      <div class="skill-bar">
-        <span>GraphQL <span class="counter" data-target="65">0%</span><span class="material-icons-outlined">device_hub</span></span>
-        <div class="bar"><div class="bar-fill"></div></div>
-      </div>
-
-      <div class="skill-bar">
-        <span>Docker <span class="counter" data-target="60">0%</span><span class="material-icons-outlined">layers</span></span>
-        <div class="bar"><div class="bar-fill"></div></div>
-      </div>
-
-      <div class="skill-bar">
-        <span>Git & GitHub <span class="counter" data-target="85">0%</span><span class="material-icons-outlined">code_repository</span></span>
-        <div class="bar"><div class="bar-fill"></div></div>
-      </div>
+    <section id="hero" class="container">
+        <div class="hero-content" data-aos="fade-up">
+            <img src="https://i.postimg.cc/Z53qJ1KZ/1760502082519.png" alt="Ayman Profile Image" class="profile-img">
+            
+            <div class="hero-title">
+                Hi, I'm Shaan
+            </div>
+            
+            <div class="tagline typewriter">
+                <h3>Web Developer & Designer</h3>
+            </div>
+            
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="500">
+                <a href="#projects" class="btn btn-primary ripple-effect">
+                    View Projects <i class="fas fa-arrow-right"></i>
+                </a>
+                
+            </div>
+        </div>
     </section>
-  </div>
 
-<script>
-  const skillBars = document.querySelectorAll('.skill-bar');
-  const counters = document.querySelectorAll('.counter');
-  const barFills = document.querySelectorAll('.bar-fill');
+    <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 188, 212, 0.75), rgba(0, 0, 0, 0));">
 
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
-      rect.bottom >= 0
-    );
-  }
+    <section id="about" class="container">
+        <h2 class="section-title" data-aos="fade-right">About Me</h2>
+        
+        <div class="about-grid">
+            <div data-aos="fade-up">
+                <p>Hello! I'm Ayman, an expert web developer and UI/UX enthusiast with a passion for creating **clean, high-performance, and visually stunning** digital experiences. I specialize in the modern web stack, focusing on **React, JavaScript, and advanced CSS techniques** like Glassmorphism and Neumorphism to deliver ultra-premium interfaces.</p>
+                <p>My approach is mobile-first, ensuring every project is fully responsive and adheres to the **WCAG AA accessibility standards**. I believe the best code is both elegant and efficient, providing users with smooth micro-interactions and an intuitive, thumb-friendly layout.</p>
+            </div>
+            
+            <div class="mission-card" data-aos="fade-left">
+                <h3>My Mission</h3>
+                <p>"To engineer digital solutions that seamlessly blend **cutting-edge technology with user-centric design**, creating impactful, accessible, and unforgettable web applications."</p>
+            </div>
+        </div>
+    </section>
 
-  function animateSkillBar(skillBar, counter, barFill) {
-    if (skillBar.classList.contains('visible')) return; // একবারেই চলবে
+    <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 188, 212, 0.75), rgba(0, 0, 0, 0));">
 
-    skillBar.classList.add('visible');
+    <section id="skills" class="container">
+        <h2 class="section-title" data-aos="fade-right">Technical Skills</h2>
+        
+        <div class="skills-grid">
+            
+            <div class="skill-panel" data-aos="zoom-in" data-aos-delay="100">
+                <h3>Frontend Core</h3>
+                <div class="skill-item">
+                    <div class="skill-name"><span>HTML5 (Semantic & Accessible)</span> <span>95%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 95%" data-progress="95"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>CSS3 (SASS/Tailwind, Glassmorphism)</span> <span>90%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%" data-progress="90"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>JavaScript (ES6+)</span> <span>85%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%" data-progress="85"></div></div>
+                </div>
+            </div>
+            
+            <div class="skill-panel" data-aos="zoom-in" data-aos-delay="200">
+                <h3>Frameworks & Libraries</h3>
+                <div class="skill-item">
+                    <div class="skill-name"><span>React / Next.js</span> <span>88%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 88%" data-progress="88"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Node.js / Express</span> <span>70%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 70%" data-progress="70"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Redux / Context API</span> <span>80%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 80%" data-progress="80"></div></div>
+                </div>
+            </div>
+            
+            <div class="skill-panel" data-aos="zoom-in" data-aos-delay="300">
+                <h3>Backend & Tools</h3>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Python / Django / Flask</span> <span>65%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 65%" data-progress="65"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Database (MongoDB, SQL)</span> <span>75%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 75%" data-progress="75"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Git / GitHub</span> <span>90%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%" data-progress="90"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    // বার ফিল অ্যানিমেট করা
-    const targetPercent = +counter.getAttribute('data-target');
-    barFill.style.width = targetPercent + '%';
+    <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 188, 212, 0.75), rgba(0, 0, 0, 0));">
 
-    // কাউন্ট আপ এনিমেশন
-    let count = 0;
-    const speed = 20; // কত দ্রুত বাড়বে
+    <section id="projects" class="container">
+        <h2 class="section-title" data-aos="fade-right">Featured Projects</h2>
+        
+        <div class="carousel-wrapper">
+            
+            <div class="project-card carousel-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://i.postimg.cc/BQSySDSJ/Pngtree-e-commerce-platform-with-organized-product-16098127.jpg" alt="E-commerce Platform Project" class="project-image">
+                <div class="project-info">
+                    <h4>Ultra-Modern E-commerce Platform</h4>
+                    <p>A full-stack React application with Redux for state management. Features Neumorphic button design and lazy loading.</p>
+                    <div class="project-actions">
+                        <a href="#" target="_blank" class="btn btn-primary ripple-effect">Live Demo</a>
+                        <a href="#" target="_blank" class="btn btn-secondary ripple-effect"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card carousel-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://i.postimg.cc/xT1xD25X/27510216-7344251.jpg" alt="Glassmorphism Dashboard Project" class="project-image">
+                <div class="project-info">
+                    <h4>Glassmorphism Admin Dashboard</h4>
+                    <p>A high-definition UI/UX project showcasing advanced glassmorphism effects and elegant data visualization components.</p>
+                    <div class="project-actions">
+                        <a href="#" target="_blank" class="btn btn-primary ripple-effect">Live Demo</a>
+                        <a href="#" target="_blank" class="btn btn-secondary ripple-effect"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
 
-    function updateCounter() {
-      if (count < targetPercent) {
-        count++;
-        counter.textContent = count + '%';
-        setTimeout(updateCounter, speed);
-      } else {
-        counter.textContent = targetPercent + '%';
-      }
-    }
-    updateCounter();
-  }
+            <div class="project-card carousel-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://i.postimg.cc/fLsCHnkW/3947107-2052934.jpg" alt="Mobile-First Landing Page Project" class="project-image">
+                <div class="project-info">
+                    <h4>Accessible Mobile-First Landing Page</h4>
+                    <p>A highly optimized, WCAG AA compliant landing page built with semantic HTML and a pure CSS mobile-first approach.</p>
+                    <div class="project-actions">
+                        <a href="#" target="_blank" class="btn btn-primary ripple-effect">Live Demo</a>
+                        <a href="#" target="_blank" class="btn btn-secondary ripple-effect"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card carousel-item" data-aos="fade-up" data-aos-delay="400">
+                <img src="https://i.postimg.cc/xdD3CDvc/1760502379998.png" alt="Python Flask API Project" class="project-image">
+                <div class="project-info">
+                    <h4>Flask RESTful API & Documentation</h4>
+                    <p>Backend project using Python Flask to build a scalable, documented RESTful API with MongoDB integration.</p>
+                    <div class="project-actions">
+                        <a href="#" target="_blank" class="btn btn-primary ripple-effect">Live Demo</a>
+                        <a href="#" target="_blank" class="btn btn-secondary ripple-effect"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
 
-  function checkSkills() {
-    skillBars.forEach((skillBar, i) => {
-      if (isInViewport(skillBar)) {
-        animateSkillBar(skillBar, counters[i], barFills[i]);
-      }
-    });
-  }
+        </div> </section>
 
-  window.addEventListener('scroll', checkSkills);
-  window.addEventListener('load', checkSkills);
-</script>
-<!-- নতুন About Me সেকশন -->
-<section class="about-me">
-  <h3>About Me</h3>
-  <div class="info-item">
-    <span class="material-icons-outlined">cake</span>
-    <div>
-      <h4>Age</h4>
-      <p id="age">Calculating...</p>
-    </div>
-  </div>
-  <div class="info-item">
-    <span class="material-icons-outlined">location_on</span>
-    <div>
-      <h4>Birthplace</h4>
-      <p>Mymensingh</p>
-    </div>
-  </div>
-  <div class="info-item">
-    <span class="material-icons-outlined">emoji_symbols</span>
-    <div>
-      <h4>Religion</h4>
-      <p>Islam</p>
-    </div>
-  </div>
-  <div class="info-item">
-    <span class="material-icons-outlined">school</span>
-    <div>
-      <h4>Education</h4>
-      <p>Currently studying Inter 2nd Year at Gauripur Govt. College</p>
-    </div>
-  </div>
-</section>
+    <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 188, 212, 0.75), rgba(0, 0, 0, 0));">
 
-<style>
-  /* About Me সেকশনের জন্য CSS */
-  .about-me {
-    max-width: 700px;
-    margin: 80px auto 40px auto;
-    background: #111;
-    padding: 30px 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 30px #00fff2aa;
-    color: #ddd;
-    animation: fadeInUp 1s ease forwards;
-  }
-  .about-me h3 {
-    text-align: center;
-    font-size: 2.2rem;
-    color: var(--primary);
-    margin-bottom: 30px;
-    letter-spacing: 2px;
-  }
-  .info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 25px;
-    gap: 20px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideFadeIn 0.7s ease forwards;
-  }
-  /* stagger animation delay */
-  .info-item:nth-child(1) { animation-delay: 0.3s; }
-  .info-item:nth-child(2) { animation-delay: 0.6s; }
-  .info-item:nth-child(3) { animation-delay: 0.9s; }
-  .info-item:nth-child(4) { animation-delay: 1.2s; }
+    <section id="experience" class="container">
+        <h2 class="section-title" data-aos="fade-right">Experience & Education</h2>
 
-  .info-item span.material-icons-outlined {
-    font-size: 3rem;
-    color: var(--primary);
-    flex-shrink: 0;
-  }
-  .info-item h4 {
-    margin-bottom: 5px;
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: var(--primary);
-  }
-  .info-item p {
-    font-size: 1.1rem;
-    color: #bbb;
-  }
+        <div class="timeline-container">
 
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes slideFadeIn {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-content">
+                    <span class="timeline-date">2023 - Present</span>
+                    <h4>Senior Web Developer</h4>
+                    <p><strong>Tech Innovators Inc.</strong> - Led a team in migrating legacy systems to a modern React/Next.js architecture, resulting in a 40% performance increase. Mentored junior developers.</p>
+                </div>
+            </div>
 
-<script>
-  // লাইভ বয়স হিসাব করার স্ক্রিপ্ট
-  function calculateAge(birthDate) {
-    const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    return age;
-  }
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="timeline-content">
+                    <span class="timeline-date">2020 - 2023</span>
+                    <h4>Frontend Specialist & UI/UX Designer</h4>
+                    <p><strong>Creative Studio Co.</strong> - Designed and implemented 15+ high-fidelity prototypes and websites, focusing on custom SASS, accessibility, and unique micro-interactions.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="timeline-content">
+                    <span class="timeline-date">2016 - 2020</span>
+                    <h4>Bachelor of Science in Computer Science</h4>
+                    <p><strong>University of Advanced Technology</strong> - Specialized in software engineering and human-computer interaction (HCI).</p>
+                </div>
+            </div>
 
-  // পেইজ লোডে বয়স দেখাবে
-  window.addEventListener('load', () => {
-    const birthDate = new Date(2007, 5, 27); // মাস 0 থেকে শুরু, so June = 5
-    const ageEl = document.getElementById('age');
-    function updateAge() {
-      const age = calculateAge(birthDate);
-      ageEl.textContent = age + ' years old';
-    }
-    updateAge();
-    // দিনে একবার আপডেট করতে চাইলে:
-    setInterval(updateAge, 1000 * 60 * 60 * 24);
-  });
-</script>
-<!-- লট্টি প্লেয়ার স্ক্রিপ্ট -->
-<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+        </div>
+    </section>
 
-<!-- Motivational Section -->
-<section class="motivation">
-  <div class="motivation-container">
-    <dotlottie-player 
-      src="https://lottie.host/d51bb74c-e37e-49ea-8b4a-dd16b8337573/1l8JC565fw.lottie" 
-      background="transparent" 
-      speed="1" 
-      style="width: 200px; height: 200px;" 
-      loop autoplay>
-    </dotlottie-player>
-    <div class="message">
-      <p id="time"></p>
-      <h4>“Success doesn’t come from what you do occasionally, it comes from what you do consistently. Hard work beats talent when talent doesn’t work hard.”</h4>
-    </div>
-    <span class="material-icons-outlined clock-icon">schedule</span>
-  </div>
-</section>
+    <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 188, 212, 0.75), rgba(0, 0, 0, 0));">
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+    <section id="interests" class="container">
+        <h2 class="section-title" data-aos="fade-right">Interests & Hobbies</h2>
 
-  .motivation {
-    background: linear-gradient(135deg, #00fff2, #00bcd4);
-    padding: 40px 30px;
-    margin: 60px auto;
-    max-width: 850px;
-    border-radius: 25px;
-    box-shadow: 0 0 50px #00bcd4bb;
-    color: #0e0e0e;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 35px;
-    flex-wrap: wrap;
-    animation: fadeInMotivation 1.5s ease forwards;
-  }
-  .motivation-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-  dotlottie-player {
-    flex-shrink: 0;
-  }
-  .message {
-    max-width: 450px;
-  }
-  #time {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    color: #004d4d;
-  }
-  .message h4 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #002222;
-    line-height: 1.4;
-  }
-  .clock-icon {
-    font-size: 3rem;
-    color: #004d4d;
-    animation: pulse 2s infinite ease-in-out;
-  }
+        <div class="interests-grid">
+            
+            <div class="interest-item" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-camera-retro interest-icon"></i>
+                <div class="interest-name">Photography</div>
+            </div>
 
-  /* এনিমেশন */
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.1);
-      opacity: 0.7;
-    }
-  }
-  @keyframes fadeInMotivation {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
+            <div class="interest-item" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-gamepad interest-icon"></i>
+                <div class="interest-name">Gaming</div>
+            </div>
+            
+            <div class="interest-item" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-plane interest-icon"></i>
+                <div class="interest-name">Travelling</div>
+            </div>
+            
+            <div class="interest-item" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fas fa-feather-alt interest-icon"></i>
+                <div class="interest-name">Writing</div>
+            </div>
 
-<script>
-  // লাইভ টাইম ফাংশন
-  function updateTime() {
-    const now = new Date();
-    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-    const timeString = now.toLocaleTimeString([], options);
-    document.getElementById('time').textContent = timeString;
-  }
-  setInterval(updateTime, 1000);
-  updateTime();
-</script>
+        </div>
+    </section>
+
+    <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 188, 212, 0.75), rgba(0, 0, 0, 0));">
+
+    <section id="contact" class="container">
+        
+            
+            <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
+                <h3>Connect With Me</h3>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Reach out through my socials or send a direct message!</p>
+                
+                <div class="social-icons">
+                    <a href="https://wa.me/message/3CECY4PPRT6TO1?text=Hello%20Ayman!" target="_blank" class="social-icon-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    
+                    <a href="https://t.me/Swygen_bd" target="_blank" class="social-icon-link" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    
+                     <a href="https://www.instagram.com/its_shaan2.0?igsh=aHl1cWo5bzhnZHNp" target="_blank" class="social-icon-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    
+                    <a href="https://www.facebook.com/share/1FyQ3e2iFi/" target="_blank" class="social-icon-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <a href="#hero" class="back-to-top" aria-label="Back to Top"><i class="fas fa-chevron-up"></i></a>
+        
+        <p>&copy; <span id="current-year"></span> Powerd By <b> Swygen IT </b> . All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+            mirror: false
+        });
+
+        // 1. Mobile Menu Functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const scrollLinks = document.querySelectorAll('.scroll-link');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked (mobile-first)
+        scrollLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // 2. Dynamic Copyright Year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 3. Skill Progress Bar Animation
+        const skillSection = document.getElementById('skills');
+        const progressFills = document.querySelectorAll('.progress-fill');
+        let skillsAnimated = false;
+
+        const animateSkills = () => {
+            if (!skillsAnimated) {
+                progressFills.forEach(fill => {
+                    const progress = fill.getAttribute('data-progress');
+                    // Use a setTimeout to ensure the transition fires after the element is in the DOM
+                    setTimeout(() => {
+                        fill.style.width = progress + '%';
+                    }, 100); 
+                });
+                skillsAnimated = true;
+            }
+        };
+
+        // Use Intersection Observer for skill animation (more advanced than simple scroll listener)
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkills();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+        observer.observe(skillSection);
+
+        // 4. Contact Form Basic Validation and Submission Mock
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                alert('অনুগ্রহ করে সকল ঘর পূরণ করুন।'); // Please fill out all fields.
+                return;
+            }
+            
+            // Simple email regex for client-side check
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('অনুগ্রহ করে একটি বৈধ ইমেল ঠিকানা লিখুন।'); // Please enter a valid email address.
+                return;
+            }
+
+            // Mock successful submission
+            alert(`ধন্যবাদ, ${name}! আপনার বার্তাটি পাওয়া গেছে। (এটি একটি মক সাবমিশন)`); // Thank you, [name]! Your message has been received. (This is a mock submission)
+            contactForm.reset();
+        });
+
+    </script>
+
+</body>
+  </html>
