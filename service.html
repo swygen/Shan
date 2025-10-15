@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Our Premium Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJd/rB9bA9N5/H7A/x3K0Qy+P8Wf7r68tI3N3Gf3fI/v5Z5Q1WqX3oK5H9x+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset and Mobile-First Base */
+        :root {
+            /* 8pt Grid System Variables */
+            --spacing-xs: 8px;
+            --spacing-sm: 12px;
+            --spacing-md: 24px; /* Base 24px spacing */
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+
+            /* Colors (Professional, Modern Aesthetic, WCAG AA Compliant) */
+            --color-primary: #007bff; /* Blue */
+            --color-secondary: #00c1ff; /* Light Blue/Cyan */
+            --color-background-dark: #121212; /* Dark Gray for ultra-premium look */
+            --color-background-light: #f0f0f0; /* Soft light background for contrast */
+            --color-text-light: #e0e0e0; /* Light text on dark background */
+            --color-text-dark: #1e1e1e; /* Dark text on light background */
+            --color-card-bg: rgba(255, 255, 255, 0.08); /* Glassmorphism Base (Dark) */
+            --color-card-border: rgba(255, 255, 255, 0.1);
+            --color-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for glassmorphism */
+            --color-neumorphism-bg: #212121;
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* Disable text selection triggering search/highlight issues */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE/Edge */
+            user-select: none; /* Standard */
+        }
+        
+        /* Text is safe: allow selection only on specific text areas if needed, but safe by default */
+        .selectable-text {
+            user-select: text;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Smooth scroll */
+            font-size: 16px; /* Base font size */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background-dark);
+            color: var(--color-text-light);
+            line-height: 1.6;
+            overflow-x: hidden; /* No horizontal scroll */
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: var(--spacing-md);
+            padding-right: var(--spacing-md);
+        }
+
+        .section-padding {
+            padding-top: var(--spacing-xl);
+            padding-bottom: var(--spacing-xl);
+        }
+
+        /* Header / Hero Section (Banner Image) */
+        .header-hero {
+            position: relative;
+            height: 60vh; /* Adjust height for mobile screens */
+            min-height: 300px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, #1f1f1f 0%, #0a0a0a 100%);
+            z-index: 1; /* Ensure text is above banner */
+        }
+
+        .banner-image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('path/to/your/hd/banner-image.jpg') no-repeat center center/cover; /* Placeholder for user */
+            opacity: 0.3; /* Subtle effect */
+            filter: blur(5px);
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--color-secondary);
+            text-shadow: 0 0 10px rgba(0, 193, 255, 0.5);
+            margin-bottom: var(--spacing-sm);
+            /* Smooth entrance animation (AOS on element) */
+        }
+
+        .header-content p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--color-text-light);
+            /* Smooth entrance animation (AOS on element) */
+        }
+
+        /* --- Service Content Sections Styling --- */
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for mobile */
+            gap: var(--spacing-md);
+            padding-top: var(--spacing-md);
+        }
+
+        /* Glassmorphism/Neumorphism Service Card */
+        .service-card {
+            background: var(--color-card-bg); /* Glassmorphism background */
+            backdrop-filter: blur(10px); /* Glass effect */
+            border: 1px solid var(--color-card-border);
+            border-radius: 20px;
+            padding: var(--spacing-md);
+            box-shadow: var(--color-shadow-soft); /* Soft shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            /* Neumorphism-style soft inset for contrast */
+            box-shadow: inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(255,255,255,0.05),
+                        0 10px 30px rgba(0, 0, 0, 0.5); /* Outer soft shadow */
+        }
+
+        /* Hover Effect & Micro-Interaction */
+        .service-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 123, 255, 0.4); /* Primary color glow on hover */
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 0 5px var(--color-secondary);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-primary);
+        }
+
+        .service-description {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.4;
+            max-height: 5em; /* Limit height for short description */
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .service-description.expanded {
+            max-height: 500px; /* Expand height to show full details */
+        }
+
+        /* Learn More Button - Subtle Neumorphism */
+        .learn-more-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background-color: var(--color-neumorphism-bg);
+            color: var(--color-secondary);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(255, 255, 255, 0.05);
+            user-select: none; /* Thumb-friendly, no accidental selection */
+        }
+
+        /* Button Hover and Active (Micro-Interactions) */
+        .learn-more-btn:hover {
+            color: var(--color-primary);
+            box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.6), -7px -7px 14px rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .learn-more-btn:active {
+            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.6), inset -3px -3px 7px rgba(255, 255, 255, 0.05); /* Pressed state */
+            transform: scale(0.98);
+        }
+
+        /* Expanded Details Section */
+        .full-details {
+            margin-top: var(--spacing-md);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+        .full-details.visible {
+            max-height: 500px; /* Enough for full details */
+            opacity: 1;
+        }
+
+        /* --- Contact / Social Section Styling --- */
+
+        .contact-section {
+            text-align: center;
+        }
+
+        .social-icons-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            list-style: none;
+        }
+
+        /* Social Icon Button - Modern Neumorphism Style with Ripple */
+        .social-icon-btn {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--color-neumorphism-bg);
+            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6), -8px -8px 16px rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--color-text-light);
+            font-size: 1.5rem;
+        }
+
+        .social-icon-btn:hover {
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8), -10px -10px 20px rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+            color: var(--color-secondary);
+        }
+
+        .social-icon-btn:active {
+            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6), inset -4px -4px 8px rgba(255, 255, 255, 0.05);
+            transform: scale(0.95);
+        }
+
+        /* Ripple Effect Base */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            background-color: rgba(0, 123, 255, 0.4); /* Primary color for ripple */
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Contact Form (Optional) */
+        .contact-form {
+            max-width: 500px;
+            margin: var(--spacing-xl) auto 0;
+            padding: var(--spacing-md);
+            border-radius: 15px;
+            background: var(--color-card-bg);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--color-card-border);
+            box-shadow: var(--color-shadow-soft);
+            text-align: left;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: var(--spacing-md);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--color-text-light);
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--color-primary);
+            color: var(--color-background-dark);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-1px);
+        }
+
+        /* --- Back To Home & Footer --- */
+
+        .back-to-home-wrapper {
+            text-align: center;
+            padding: var(--spacing-xl) 0 var(--spacing-md); /* Above the footer */
+        }
+
+        .back-to-home-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 30px;
+            text-decoration: none;
+            color: var(--color-background-dark);
+            background-color: var(--color-text-light);
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .back-to-home-btn:hover {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .back-to-home-btn i {
+            margin-right: 8px;
+        }
+
+        .footer {
+            padding: var(--spacing-md) 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Media Queries for Responsiveness (Desktop/Tablet) */
+        @media (min-width: 768px) {
+            .header-hero {
+                height: 70vh;
+            }
+
+            .header-content h1 {
+                font-size: 4.5rem;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns for tablet */
+                gap: var(--spacing-lg);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .service-grid {
+                grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-hero" id="top">
+        <div class="banner-image-placeholder" aria-hidden="true"></div>
+        <div class="header-content">
+            <h1 data-aos="fade-down" data-aos-duration="1000">  Services By Swygen IT </h1>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Ultra-modern solutions crafted for the digital age.</p>
+        </div>
+    </header>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: var(--spacing-xl);" 
+                 data-aos="zoom-in" data-aos-duration="800">
+                <i class="fas fa-magic service-icon" style="margin: 0 10px;"></i>
+                <i class="fas fa-mobile-alt service-icon" style="margin: 0 10px;"></i>
+                <i class="fas fa-code service-icon" style="margin: 0 10px;"></i>
+            </div>
+
+            <div class="service-grid">
+
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+                    <i class="fas fa-drafting-compass service-icon"></i>
+                    <h2 class="service-title">UI/UX Design</h2>
+                    <p class="service-description">
+                        Creating intuitive, accessible, and stunning user interfaces and experiences. We follow the 8pt grid system for perfect pixel alignment and use elegant typography like Inter or SF Pro Display.
+                    </p>
+                    <div class="full-details">
+                        <p class="selectable-text">
+                            Our process includes user research, wireframing, prototyping with tools like Figma, and ensuring WCAG AA compliance. We specialize in glassmorphism and soft neumorphism aesthetics for a premium, realistic feel.
+                        </p>
+                    </div>
+                    <button class="learn-more-btn" data-target="service1">Read More</button>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true">
+                    <i class="fas fa-laptop-code service-icon"></i>
+                    <h2 class="service-title">Full-Stack Development</h2>
+                    <p class="service-description">
+                        Robust and scalable development using modern technologies. Focusing on mobile-first and high-performance backend architecture.
+                    </p>
+                    <div class="full-details">
+                        <p class="selectable-text">
+                            We build responsive web applications with React, Vue, or Angular on the front-end, and Node.js, Python/Django, or Go on the back-end. All deployments are optimized for speed and security.
+                        </p>
+                    </div>
+                    <button class="learn-more-btn" data-target="service2">Read More</button>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
+                    <i class="fas fa-mobile-alt service-icon"></i>
+                    <h2 class="service-title">Mobile App Development</h2>
+                    <p class="service-description">
+                        Native and cross-platform mobile application development for iOS and Android with premium UI/UX design embedded.
+                    </p>
+                    <div class="full-details">
+                        <p class="selectable-text">
+                            Utilizing Flutter or React Native for cross-platform efficiency, or Swift/Kotlin for native performance. We ensure smooth animations, micro-interactions, and thumb-friendly layouts.
+                        </p>
+                    </div>
+                    <button class="learn-more-btn" data-target="service3">Read More</button>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true">
+                    <i class="fas fa-cloud service-icon"></i>
+                    <h2 class="service-title">Cloud & DevOps</h2>
+                    <p class="service-description">
+                        Seamless deployment, continuous integration, and scalable cloud infrastructure management on AWS, Azure, or GCP.
+                    </p>
+                    <div class="full-details">
+                        <p class="selectable-text">
+                            Expertise in containerization (Docker, Kubernetes), CI/CD pipelines (GitLab, Jenkins), and infrastructure as code (Terraform). We ensure high availability and robust monitoring.
+                        </p>
+                    </div>
+                    <button class="learn-more-btn" data-target="service4">Read More</button>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true">
+                    <i class="fas fa-tachometer-alt service-icon"></i>
+                    <h2 class="service-title">Performance Optimization</h2>
+                    <p class="service-description">
+                        Enhancing website speed, load times, and Core Web Vitals for better SEO and user engagement.
+                    </p>
+                    <div class="full-details">
+                        <p class="selectable-text">
+                            Advanced image optimization, code splitting, asset minification, and server-side rendering (SSR) techniques to achieve blazing-fast performance metrics.
+                        </p>
+                    </div>
+                    <button class="learn-more-btn" data-target="service5">Read More</button>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
+                    <i class="fas fa-palette service-icon"></i>
+                    <h2 class="service-title">HD/8K Visual Assets</h2>
+                    <p class="service-description">
+                        Creating ultra-realistic, high-definition graphical assets and custom illustrations for a truly premium aesthetic.
+                    </p>
+                    <div class="full-details">
+                        <p class="selectable-text">
+                            Vector-based graphics, 8K-ready textures, and professional photography/videography integration to ensure every pixel is crisp and professional on high-resolution displays.
+                        </p>
+                    </div>
+                    <button class="learn-more-btn" data-target="service6">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding contact-section" 
+             data-aos="fade-in" data-aos-duration="1000" data-aos-delay="500">
+        <div class="container">
+            <h2 style="font-size: 2rem; font-weight: 700;">Get In Touch</h2>
+            <p style="margin-top: var(--spacing-sm);">Connect with us through our beautiful social channels.</p>
+
+
+            <form class="contact-form" id="premiumContactForm" data-aos="slide-up" data-aos-duration="1000" data-aos-delay="800">
+                <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-md); color: var(--color-primary);">Send a Message</h3>
+                <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+                <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+                <textarea name="message" rows="4" placeholder="Your Message" required aria-label="Your Message"></textarea>
+                <button type="submit" class="submit-btn">Send Securely</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="back-to-home-wrapper">
+        <a href="index.html" class="back-to-home-btn" aria-label="Back to Home Page">
+            <i class="fas fa-home"></i> Back To Home
+        </a>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; <span id="current-year"></span> Powered by  Swygen IT . All Rights Reserved. | Crafted with UI/UX Excellence By Ayman Hasan Shaan 
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS (Animate On Scroll)
+            AOS.init({
+                // Global settings:
+                disable: 'mobile', // Disable animations on smaller screens if desired, but keeping them for 'ultra-premium' feel.
+                startEvent: 'DOMContentLoaded',
+                offset: 120, // offset (in px) from the original trigger point
+                delay: 0, // values from 0 to 3000, with step 50ms
+                duration: 800, // values from 0 to 3000, with step 50ms
+                easing: 'ease-in-out', // default easing for AOS animations
+                once: true, // whether animation should only happen once - important for scroll reveal
+                mirror: false, // whether elements should animate out while scrolling past them
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Functionality for "Read More" button to expand details in-place
+            const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
+            learnMoreButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.service-card');
+                    const description = card.querySelector('.service-description');
+                    const details = card.querySelector('.full-details');
+
+                    if (details.classList.contains('visible')) {
+                        // Collapse
+                        details.classList.remove('visible');
+                        description.classList.remove('expanded');
+                        this.textContent = 'Read More';
+                    } else {
+                        // Expand
+                        details.classList.add('visible');
+                        description.classList.add('expanded');
+                        this.textContent = 'Read Less';
+                    }
+                });
+            });
+
+            // Ripple Effect for Social Icons
+            const socialButtons = document.querySelectorAll('.social-icon-btn');
+            socialButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    const color = this.getAttribute('data-ripple-color') || 'rgba(255, 255, 255, 0.4)';
+
+                    // Create ripple element
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple');
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.backgroundColor = color;
+
+                    // Append and remove after animation
+                    this.appendChild(ripple);
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Optional: Contact Form Validation and Submission (Placeholder)
+            const contactForm = document.getElementById('premiumContactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Simple validation check
+                    const name = this.querySelector('input[name="name"]').value.trim();
+                    const email = this.querySelector('input[name="email"]').value.trim();
+                    const message = this.querySelector('textarea[name="message"]').value.trim();
+
+                    if (!name || !email || !message) {
+                        alert('Please fill out all fields. 🚫');
+                        return;
+                    }
+
+                    // Simple email format check
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert('Please enter a valid email address. 📧');
+                        return;
+                    }
+
+                    // Success message simulation
+                    alert('Message Sent Securely! We will be in touch soon. ✨');
+
+                    // Clear the form
+                    this.reset();
+
+                    // In a real application, you would use fetch() or XMLHttpRequest here to send data to a server.
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
