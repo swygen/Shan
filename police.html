@@ -1,111 +1,617 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
   <title>Privacy Policy - Swygen IT Services</title>
   <meta name="description" content="Swygen-এর প্রাইভেসি পলিসি পড়ুন। আপনার ডেটার নিরাপত্তা এবং গোপনীয়তা আমাদের অগ্রাধিকার।" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      background: linear-gradient(135deg, #0f172a, #1e1b4b, #0f172a);
-    }
-  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <title>Privacy & Policy | Ultra-Premium Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <style>
+        /* ----------------------------------------------------
+           0. GLOBAL STYLES & RESETS (8pt Grid System)
+           ---------------------------------------------------- */
+        :root {
+            /* WCAG AA Accessible Colors (Dark Theme Focus for Premium Aesthetic) */
+            --color-primary: #8e44ad; /* Subtle Purple Accent */
+            --color-secondary: #3498db; /* Blue Accent for Interaction */
+            --color-text: #ecf0f1; /* Light Text */
+            --color-background: #1c1c20; /* Deep Dark Background */
+            --color-card-bg: rgba(255, 255, 255, 0.05); /* Glassmorphism Base */
+            --color-neumorphism-bg: #2c2c30;
+
+            /* Spacing (8pt Grid System - 24px base spacing) */
+            --spacing-xs: 4px;
+            --spacing-s: 8px;
+            --spacing-m: 16px;
+            --spacing-l: 24px;
+            --spacing-xl: 48px;
+
+            /* Border Radii */
+            --radius-soft: 12px;
+            --radius-medium: 20px;
+
+            /* Shadows */
+            --shadow-soft: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smooth scroll for back-to-home button and general UX */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden; /* 1. Mobile-First: No horizontal scroll */
+            -webkit-tap-highlight-color: transparent; /* Text is safe: Disables default highlighting on tap */
+        }
+
+        h1, h2, h3, p { margin-top: 0; }
+        
+        /* Text is safe: Ensure text selection doesn't trigger unintended actions (e.g., search/highlight) */
+        ::selection {
+            background: var(--color-primary);
+            color: var(--color-background);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-l); /* 24px spacing on sides */
+        }
+
+        /* --- Micro-Interactions: Ripple Effect Base CSS --- */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 0;
+            height: 0;
+            pointer-events: none;
+            transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        /* ----------------------------------------------------
+           1. HEADER / HERO SECTION (Banner Image Placeholder)
+           ---------------------------------------------------- */
+        .header {
+            position: relative;
+            height: 60vh; /* Adjust height for mobile/desktop */
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            overflow: hidden;
+        }
+
+        .banner-image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('placeholder-banner.jpg') center/cover no-repeat; /* Placeholder for user's banner image */
+            filter: brightness(0.4) blur(3px);
+            z-index: -1;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .header-content {
+            z-index: 1;
+            /* Subtle Entrance Animation (AOS used on content block) */
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: var(--spacing-s);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        /* ----------------------------------------------------
+           2. POLICY CONTENT SECTIONS (Glassmorphism Cards)
+           ---------------------------------------------------- */
+        .policy-section {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-l); /* 24px spacing */
+            margin-top: var(--spacing-xl);
+        }
+
+        .policy-card {
+            /* Glassmorphism Panel */
+            background-color: var(--color-card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--radius-medium);
+            padding: var(--spacing-l);
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            will-change: transform; /* Performance optimization */
+        }
+
+        .policy-card:hover {
+            transform: translateY(-8px) scale(1.02); /* Hover Effect: Soft lift and slight scale */
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-m);
+            cursor: pointer; /* Thumb-friendly layout */
+            transition: color 0.3s ease;
+        }
+
+        .card-header:hover h3 {
+             color: var(--color-secondary);
+        }
+
+        .card-header i {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-right: var(--spacing-m);
+            transition: transform 0.3s ease;
+        }
+
+        .card-header h3 {
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        /* Collapsible/Accordion functionality styles */
+        .card-content {
+            max-height: 1000px; /* Large value for smooth transition */
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease;
+        }
+
+        .card-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+        }
+
+        .card-toggle-icon {
+            margin-left: auto;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card-content.collapsed + .card-header .card-toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        /* Mobile Optimization: Force Accordion on Mobile (handled by JS but this ensures it looks right) */
+        @media (max-width: 768px) {
+            .policy-card {
+                padding: var(--spacing-m);
+            }
+        }
+
+        /* ----------------------------------------------------
+           3. CONTACT / SOCIAL SECTION (Neumorphism Style)
+           ---------------------------------------------------- */
+        .social-contact-section {
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-l);
+            margin: var(--spacing-l) 0 var(--spacing-xl);
+        }
+
+        .social-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--color-text);
+            transition: all 0.3s ease;
+            position: relative; /* For ripple effect */
+
+            /* Neumorphism Style */
+            background: var(--color-neumorphism-bg);
+            box-shadow: 8px 8px 16px var(--color-background),
+                        -8px -8px 16px #4c4c50;
+        }
+
+        .social-icon:hover {
+            color: var(--color-primary);
+            box-shadow: inset 5px 5px 10px var(--color-background),
+                        inset -5px -5px 10px #4c4c50; /* Pressed/Active Neumorphism */
+            transform: scale(0.95);
+        }
+        
+        /* Contact Form (Optional) - Simple/Clean Style */
+        .contact-form {
+            max-width: 600px;
+            margin: var(--spacing-xl) auto 0;
+            display: grid;
+            gap: var(--spacing-m);
+            padding: var(--spacing-l);
+            border-radius: var(--radius-medium);
+            background-color: var(--color-card-bg);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: var(--spacing-m);
+            border: none;
+            border-radius: var(--radius-soft);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--color-text);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 2px var(--color-primary);
+        }
+
+        .contact-form button {
+            /* Subtle Neumorphism Button */
+            background: var(--color-primary);
+            color: var(--color-text);
+            border: none;
+            padding: var(--spacing-m) var(--spacing-l);
+            border-radius: var(--radius-soft);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 5px 5px 10px var(--color-background),
+                        -5px -5px 10px #4c4c50;
+        }
+
+        .contact-form button:hover {
+            background: var(--color-secondary);
+        }
+
+        /* ----------------------------------------------------
+           4. BACK TO HOME & FOOTER
+           ---------------------------------------------------- */
+        .back-to-home-wrapper {
+            text-align: center;
+            padding: var(--spacing-xl) 0 var(--spacing-l);
+        }
+
+        .back-to-home-btn {
+            /* Neumorphism Style for Button */
+            display: inline-flex;
+            align-items: center;
+            padding: var(--spacing-m) var(--spacing-l);
+            text-decoration: none;
+            color: var(--color-primary);
+            font-weight: 600;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            
+            background: var(--color-neumorphism-bg);
+            box-shadow: 8px 8px 16px var(--color-background),
+                        -8px -8px 16px #4c4c50;
+        }
+
+        .back-to-home-btn i {
+            margin-right: var(--spacing-s);
+        }
+
+        .back-to-home-btn:hover {
+            color: var(--color-text);
+            background: var(--color-primary);
+            box-shadow: 0 4px 20px rgba(142, 68, 173, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: var(--spacing-l) 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ----------------------------------------------------
+           5. MEDIA QUERIES (FULL RESPONSIVENESS)
+           ---------------------------------------------------- */
+
+        /* Tablet/Small Desktop adjustments */
+        @media (max-width: 1024px) {
+            .header h1 {
+                font-size: 2.8rem;
+            }
+            .policy-card {
+                padding: var(--spacing-l);
+            }
+            .policy-grid {
+                gap: var(--spacing-m);
+            }
+        }
+
+        /* Mobile-Specific adjustments (Thumb-Friendly) */
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 var(--spacing-m); /* Tighter padding for mobile */
+            }
+            .header {
+                height: 40vh;
+                min-height: 250px;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .header p {
+                font-size: 1rem;
+            }
+            .policy-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-m);
+            }
+            .policy-card {
+                padding: var(--spacing-m);
+            }
+            .social-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+
+    </style>
 </head>
-<body class="text-white font-sans">
+<body>
 
-  <!-- Animation Header -->
-  <div class="flex justify-center items-center pt-10" data-aos="fade-down">
-    <dotlottie-player 
-      src="https://lottie.host/5a357e48-3d55-4bea-87ab-bbbb5097f547/pr95iyyQog.lottie" 
-      background="transparent" 
-      speed="1" 
-      style="width: 220px; height: 220px" 
-      loop autoplay>
-    </dotlottie-player>
-  </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,     // animation duration
+            once: true,         // animations only happen once
+            delay: 150,         // slight delay for staggered reveal
+            easing: 'ease-in-out' // smoother transition curve
+        });
 
-  <!-- Main Content -->
-  <section class="max-w-3xl mx-auto py-10 px-6 space-y-10">
-    <div class="text-center" data-aos="zoom-in">
-      <span class="material-icons-outlined text-5xl text-[#38bdf8] mb-3">
-        policy
-      </span>
-      <h1 class="text-4xl font-bold text-[#38bdf8]">প্রাইভেসি পলিসি</h1>
-      <p class="text-gray-300 text-base mt-2">আপনার তথ্য নিরাপত্তা আমাদের অগ্রাধিকার</p>
-    </div>
+        /* --- Micro-Interactions: Ripple Effect JS --- */
+        document.addEventListener('DOMContentLoaded', () => {
+            const rippleTargets = document.querySelectorAll('.ripple');
 
-    <div class="space-y-8 bg-[#1e293b]/90 p-6 rounded-2xl shadow-xl backdrop-blur border border-[#334155]">
-      <!-- Policy Item -->
-      <div data-aos="fade-up">
-        <h2 class="text-xl font-semibold text-[#facc15] mb-1">1. ডেটা সংগ্রহ</h2>
-        <p class="text-gray-300 text-sm">
-          ব্যবহারকারী নাম, ইমেইল, UID এবং ডিভাইস তথ্য স্বয়ংক্রিয়ভাবে সংগ্রহ করা হয় কেবলমাত্র অ্যাপের কার্যকারিতা নিশ্চিত করার জন্য।
-        </p>
-      </div>
+            rippleTargets.forEach(target => {
+                target.addEventListener('click', function(e) {
+                    // Check if a ripple is already active (prevents overlay)
+                    const existingRipple = this.querySelector('.ripple-effect');
+                    if (existingRipple) {
+                        existingRipple.remove();
+                    }
 
-      <div data-aos="fade-up" data-aos-delay="100">
-        <h2 class="text-xl font-semibold text-[#facc15] mb-1">2. ডেটার ব্যবহার</h2>
-        <p class="text-gray-300 text-sm">
-          সংগ্রহকৃত তথ্য শুধুমাত্র ইউজার এক্সপেরিয়েন্স উন্নয়নের জন্য ব্যবহৃত হয়, বিক্রয় বা তৃতীয় পক্ষের সাথে শেয়ার করা হয় না।
-        </p>
-      </div>
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple-effect';
 
-      <div data-aos="fade-up" data-aos-delay="200">
-        <h2 class="text-xl font-semibold text-[#facc15] mb-1">3. সিকিউরিটি</h2>
-        <p class="text-gray-300 text-sm">
-          Firebase, SSL এনক্রিপশন ও OAuth প্রোটোকল দিয়ে আপনার তথ্য সুরক্ষিত রাখা হয়।
-        </p>
-      </div>
+                    // Get click position relative to the element
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
 
-      <div data-aos="fade-up" data-aos-delay="300">
-        <h2 class="text-xl font-semibold text-[#facc15] mb-1">4. কুকিজ ব্যবহারে নীতি</h2>
-        <p class="text-gray-300 text-sm">
-          আমাদের ওয়েবসাইটে ইউজার বিহেভিয়ার বিশ্লেষণ করতে কুকিজ ব্যবহার করা হয় তবে এটি পূর্ণভাবে নিয়ন্ত্রিত এবং সম্মতিভিত্তিক।
-        </p>
-      </div>
+                    // Set position and size
+                    ripple.style.width = ripple.style.height = `${size * 2}px`;
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
 
-      <div data-aos="fade-up" data-aos-delay="400">
-        <h2 class="text-xl font-semibold text-[#facc15] mb-1">5. তৃতীয় পক্ষের পরিষেবা</h2>
-        <p class="text-gray-300 text-sm">
-          কিছু ক্ষেত্রে যেমন লগইন বা পেমেন্ট এর জন্য তৃতীয় পক্ষের সার্ভিস ব্যবহৃত হয়, যা স্বতন্ত্রভাবে তাদের নিজস্ব প্রাইভেসি নীতির অধীনে।
-        </p>
-      </div>
+                    this.appendChild(ripple);
 
-      <div data-aos="fade-up" data-aos-delay="500">
-        <h2 class="text-xl font-semibold text-[#facc15] mb-1">6. পরিবর্তনের নোটিশ</h2>
-        <p class="text-gray-300 text-sm">
-          পলিসি আপডেট হলে তা ওয়েবসাইটে জানিয়ে দেয়া হবে। গুরুত্বপূর্ণ পরিবর্তনের ক্ষেত্রে ইউজারদের নোটিফাই করা হবে।
-        </p>
-      </div>
-    </div>
+                    // Start the animation
+                    setTimeout(() => {
+                        ripple.style.opacity = '0';
+                        ripple.style.width = '0';
+                        ripple.style.height = '0';
+                    }, 10); // Small timeout to ensure it starts after element is appended
+                    
+                    // Cleanup
+                    ripple.addEventListener('transitionend', () => ripple.remove());
+                });
+            });
+        });
 
-    <!-- Back Button -->
-    <div class="text-center mt-10" data-aos="fade-up">
-      <a href="dashboard.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#38bdf8] to-[#0ea5e9] text-white font-medium text-base shadow-lg hover:scale-105 transition-all">
-        <span class="material-icons-outlined">arrow_back</span>
-        হোমে ফিরে যান
-      </a>
-    </div>
+        /* --- Collapsible/Accordion Functionality JS --- */
+        document.addEventListener('DOMContentLoaded', () => {
+            const headers = document.querySelectorAll('.card-header');
+            
+            // On page load, ensure all content is collapsed on mobile (max-width: 768px)
+            const isMobile = window.matchMedia("(max-width: 768px)").matches;
+            
+            document.querySelectorAll('.policy-card .card-content').forEach(content => {
+                // If it's a mobile device, collapse content initially for the accordion effect
+                if (isMobile) {
+                    content.classList.add('collapsed');
+                } else {
+                    // Desktop can show all content by default or be collapsible
+                    // For this premium design, we'll keep them open on desktop for better visibility.
+                    // If you wanted them collapsed on desktop as well, remove the 'isMobile' check.
+                    content.classList.remove('collapsed'); 
+                }
+            });
 
-    <div class="text-center text-gray-500 text-xs mt-8" data-aos="fade-up">
-      &copy; 2025 Swygen Technologies. All rights reserved.
-    </div>
-  </section>
 
-  <script>
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
-    });
-  </script>
+            headers.forEach(header => {
+                // Find the associated content (it's the sibling BEFORE the header, or the next sibling if structure changes)
+                // In this structure, the content is the previous sibling.
+                const content = header.previousElementSibling; 
+
+                // Attach the click listener to the header (thumb-friendly)
+                header.addEventListener('click', () => {
+                    if (content) {
+                        content.classList.toggle('collapsed');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <header class="header">
+        <div class="banner-image-placeholder"></div>
+        
+        <div class="container header-content" data-aos="fade-down" data-aos-duration="1500">
+            <h1>Swygen IT Privacy & Policy</h1>
+            <p>Your trust is our priority. A transparent look at how we handle your data.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="policy-section">
+            <div class="container">
+                <div class="policy-grid">
+
+                    <div class="policy-card ripple" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-content">
+                            <p>We only collect data necessary for portfolio functionality (e.g., contact form submissions, basic analytics).</p>
+                            <ul>
+                                <li><strong>Contact Data:</strong> Name, Email, Message (Stored for reply only).</li>
+                                <li><strong>Usage Data:</strong> Pages visited, time spent (Anonymized via analytics).</li>
+                            </ul>
+                        </div>
+                        <div class="card-header" role="button" aria-expanded="true" aria-controls="data-collection-content">
+                            <i class="fas fa-database"></i> <h3>Data Collection</h3>
+                            <i class="fas fa-chevron-down card-toggle-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="policy-card ripple" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-content">
+                            <p>Data is used exclusively for service provision, communication, and site improvement.</p>
+                            <ul>
+                                <li><strong>Communication:</strong> To respond to your direct inquiries.</li>
+                                <li><strong>Improvement:</strong> To optimize user experience and site performance.</li>
+                            </ul>
+                        </div>
+                        <div class="card-header" role="button" aria-expanded="true" aria-controls="data-usage-content">
+                            <i class="fas fa-cogs"></i> <h3>Data Usage</h3>
+                            <i class="fas fa-chevron-down card-toggle-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="policy-card ripple" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-content">
+                            <p>We use minimal, non-intrusive cookies for site functionality and analytics.</p>
+                            <ul>
+                                <li><strong>Functional Cookies:</strong> Necessary for the site to work (e.g., session state).</li>
+                                <li><strong>Analytical Cookies:</strong> For traffic analysis (Anonymized and aggregated).</li>
+                            </ul>
+                        </div>
+                        <div class="card-header" role="button" aria-expanded="true" aria-controls="cookies-content">
+                            <i class="fas fa-cookie-bite"></i> <h3>Cookies Policy</h3>
+                            <i class="fas fa-chevron-down card-toggle-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="policy-card ripple" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-content">
+                            <p>We use essential third-party services like Google Fonts and a CDN for performance.</p>
+                            <ul>
+                                <li><strong>Hosting/CDN:</strong> Cloudflare/similar for speed and security.</li>
+                                <li><strong>Analytics:</strong> Google Analytics (data is pseudonymized).</li>
+                            </ul>
+                        </div>
+                        <div class="card-header" role="button" aria-expanded="true" aria-controls="third-party-content">
+                            <i class="fas fa-share-alt"></i> <h3>Third-Party Services</h3>
+                            <i class="fas fa-chevron-down card-toggle-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="policy-card ripple" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card-content">
+                            <p>You have the right to access, rectify, or request the deletion of your personal data.</p>
+                            <ul>
+                                <li><strong>Right to Access:</strong> Request a copy of your stored data.</li>
+                                <li><strong>Right to Erasure:</strong> Request deletion (excluding legal necessity).</li>
+                            </ul>
+                        </div>
+                        <div class="card-header" role="button" aria-expanded="true" aria-controls="user-rights-content">
+                            <i class="fas fa-user-shield"></i> <h3>User Rights (GDPR/CCPA)</h3>
+                            <i class="fas fa-chevron-down card-toggle-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="policy-card ripple" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card-content">
+                            <p>We implement technical and organizational measures to ensure data security.</p>
+                            <ul>
+                                <li><strong>Encryption:</strong> All data transferred via HTTPS/SSL.</li>
+                                <li><strong>Access Control:</strong> Strict internal access controls.</li>
+                            </ul>
+                        </div>
+                        <div class="card-header" role="button" aria-expanded="true" aria-controls="security-content">
+                            <i class="fas fa-lock"></i> <h3>Security Measures</h3>
+                            <i class="fas fa-chevron-down card-toggle-icon"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <div class="back-to-home-wrapper" data-aos="fade-up">
+            <a href="index.html" class="back-to-home-btn ripple" aria-label="Back to Home Page">
+                <i class="fas fa-home"></i> Back To Home
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> [Your Name/Brand]. All Rights Reserved. | Designed with 🤍 in HD/8K.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
-</html>
+                  </html>
